@@ -29,8 +29,133 @@
 .container {
     width: 85%;
     max-width: 1200px;
+    height: 100vh;
     margin: 0 auto;
     background-color: rgb(251, 153, 153);
     text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }  
 
+.frame {
+    background-color: grey;
+    width: 275px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+
+    padding: 0.75rem;
+    grid-template-areas: 
+        "upper-dis  upper-dis   upper-dis   upper-dis   upper-dis"
+        "bottom-dis bottom-dis  bottom-dis  bottom-dis  bottom-dis"
+        "clear      clear       .           delete      delete"
+        "seven      eight       nine        root        division"
+        "four       five        six         percent     multiplication"
+        "one        two         three       equal       subtraction"
+        "plusMinus zero        dot         equal       addition";
+
+}
+
+.display {
+    background-color: white;
+    border: 2px solid black;
+}
+.upper-display {
+    grid-area: upper-dis;
+    
+    border-bottom: none;
+   
+}
+
+.bottom-display {
+    grid-area: bottom-dis;
+    border-top: none;
+}
+
+
+.clearBtn {
+    grid-area: clear;
+}
+
+.deleteBtn {
+    grid-area: delete;
+}
+
+.nineBtn {
+    grid-area: nine;
+}
+
+.eightBtn {
+    grid-area: eight;
+}
+
+.sevenBtn {
+    grid-area: seven;
+}
+
+.sixBtn {
+    grid-area: six;
+}
+
+.fiveBtn {
+    grid-area: five;
+}
+
+.fourBtn {
+    grid-area: four;
+}
+
+.threeBtn {
+    grid-area: three;
+}
+
+.twoBtn {
+    grid-area: two;
+}
+
+.oneBtn {
+    grid-area: one;
+}
+
+.plusMinusBtn {
+    grid-area: plusMinus;
+}
+
+.zeroBtn {
+    grid-area: zero;
+}
+
+.dotBtn {
+    grid-area: dot;
+}
+
+.rootBtn {
+    grid-area: root;
+}
+
+.divisionBtn {
+    grid-area: division;
+}
+
+.percentBtn {
+    grid-area: percent;
+}
+
+.multiplicationBtn {
+    grid-area: multiplication;
+}
+
+.equalBtn {
+    grid-area: equal;
+}
+
+.subtractionBtn {
+    grid-area:subtraction;
+}
+
+.additionBtn {
+    grid-area: addition;
+}
