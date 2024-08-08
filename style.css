@@ -25,3 +25,12 @@
   #root, #__next {
     isolation: isolate;
   }
+
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: rgb(251, 153, 153);
+    text-align: center;
+}  
+
