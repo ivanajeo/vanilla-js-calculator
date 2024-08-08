@@ -27,8 +27,6 @@
   }
 
 .container {
-    width: 85%;
-    max-width: 1200px;
     height: 100vh;
     margin: 0 auto;
     background-color: rgb(251, 153, 153);
@@ -41,13 +39,14 @@
 
 .frame {
     background-color: grey;
-    width: 275px;
+    width: 400px;
+    min-height: 500px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(7, 1fr);
 
-    padding: 0.75rem;
+    padding: 1rem;
     grid-template-areas: 
         "upper-dis  upper-dis   upper-dis   upper-dis   upper-dis"
         "bottom-dis bottom-dis  bottom-dis  bottom-dis  bottom-dis"
@@ -55,27 +54,44 @@
         "seven      eight       nine        root        division"
         "four       five        six         percent     multiplication"
         "one        two         three       equal       subtraction"
-        "plusMinus zero        dot         equal       addition";
+        "plusMinus  zero        dot         equal       addition";
 
 }
 
 .display {
     background-color: white;
     border: 2px solid black;
+    margin: 0.15rem;
 }
+
 .upper-display {
     grid-area: upper-dis;
-    
+    margin-bottom: 0;
     border-bottom: none;
    
 }
 
 .bottom-display {
     grid-area: bottom-dis;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
     border-top: none;
 }
 
+.btn {
+    background-color: goldenrod;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin: 0.15rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
 .clearBtn {
     grid-area: clear;
 }
@@ -150,6 +166,7 @@
 
 .equalBtn {
     grid-area: equal;
+
 }
 
 .subtractionBtn {
