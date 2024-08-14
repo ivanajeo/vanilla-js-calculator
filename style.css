@@ -47,8 +47,8 @@
 
     padding: 1rem;
     grid-template-areas: 
-        "upper-dis  upper-dis   upper-dis   upper-dis   upper-dis"
-        "bottom-dis bottom-dis  bottom-dis  bottom-dis  bottom-dis"
+        "upperDis  upperDis   upperDis   upperDis   upperDis"
+        "bottomDis bottomDis  bottomDis  bottomDis  bottomDis"
         "clear      clear       .           delete      delete"
         "seven      eight       nine        root        division"
         "four       five        six         percent     multiplication"
@@ -63,15 +63,15 @@
     margin: 0.15rem;
 }
 
-.upper-display {
-    grid-area: upper-dis;
+.upperDis {
+    grid-area: upperDis;
     margin-bottom: 0;
     border-bottom: none;
    
 }
 
-.bottom-display {
-    grid-area: bottom-dis;
+.bottomDis {
+    grid-area: bottomDis;
     margin-top: 0;
     margin-bottom: 0.5rem;
     border-top: none;
