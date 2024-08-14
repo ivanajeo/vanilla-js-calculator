@@ -31,8 +31,7 @@
     margin: 0 auto;
     background-color: rgb(251, 153, 153);
     text-align: center;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+
     padding-top: 1rem;
     padding-bottom: 1rem;
 }  
@@ -79,7 +78,7 @@
 }
 
 .btn {
-    background-color: goldenrod;
+    background-color: rgb(218, 165, 32);
     border: 1px solid black;
     border-radius: 3px;
     margin: 0.15rem;
@@ -92,6 +91,15 @@
     align-items: center;
     
 }
+
+.btn:hover {
+    background-color: rgb(210, 160, 34);
+}
+
+.btn:active {
+    background-color: rgb(194, 148, 31);;
+}
+
 .clearBtn {
     grid-area: clear;
 }
