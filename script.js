@@ -1,5 +1,5 @@
 const upperDis = document.querySelector(".upperDis");
-const bottomDis = document.querySelector("bottomDis");
+const bottomDis = document.querySelector(".bottomDis");
 
 const clearBtn = document.querySelector(".clearBtn");
 const deleteBtn = document.querySelector(".deleteBtn");
@@ -23,3 +23,27 @@ const multiplicationBtn = document.querySelector(".multiplicationBtn");
 const equalBtn = document.querySelector(".equalBtn");
 const subtractionBtn = document.querySelector(".subtractionBtn");
 const additionBtn = document.querySelector(".additionBtn");
+
+const add = function(num1, num2) {
+    return num1 + num2;
+}
+
+const subtract = function(num1, num2) {
+    return num1 - num2;
+}
+
+const multiply = function(num1, num2) {
+    return num1 * num2;
+}
+
+const divide = function(num1, num2) {
+    return num1 / num2;
+}
+
+const root = function(num1) {
+    return Math.sqrt(num1);
+}
+
+const percent = function(num1) {
+    return num1 / 100;
+}
