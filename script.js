@@ -27,8 +27,8 @@ const additionBtn = document.querySelector(".additionBtn");
 const numberBtn = document.querySelectorAll(".numberBtn");
 const operatorBtn = document.querySelectorAll(".operatorBtn");
 
-let firstNumber = null;
-let secondNumber = null;
+let firstNumber = "";
+let secondNumber = "";
 let selectedOperator = null;
 
 const add = function(num1, num2) {
@@ -57,11 +57,18 @@ const percent = function(num1) {
 
 numberBtn.forEach((button) => {
     button.addEventListener("click", function () {
-        if (firstNumber === null) {
-            firstNumber = parseInt(this.getAttribute('data-num'));
+        // if (firstNumber === null) {
+        //     firstNumber = parseInt(this.getAttribute('data-num'));
+        //     console.log('First Number:', firstNumber);
+        // } else if (selectedOperator !== null) {
+        //     secondNumber = parseInt(this.textContent);
+        //     console.log('Second Number:', secondNumber);
+        // }
+        if (selectedOperator === null) {
+            firstNumber += this.getAttribute("data-num");
             console.log('First Number:', firstNumber);
-        } else if (selectedOperator !== null) {
-            secondNumber = parseInt(this.textContent);
+        } else {
+            secondNumber += this.getAttribute("data-num");
             console.log('Second Number:', secondNumber);
         }
     });
@@ -76,17 +83,25 @@ operatorBtn.forEach((button) => {
 
 
 equalBtn.addEventListener("click", function() {
+    let result;
     if (firstNumber !== null && secondNumber !== null) {
         if (selectedOperator === "add") {
-            console.log(add(firstNumber, secondNumber));
+            result = add(parseInt(firstNumber), parseInt(secondNumber));
+            console.log(result);
         } else if (selectedOperator === "subtract") {
-            console.log(subtract(firstNumber, secondNumber));
+            result = subtract(firstNumber, secondNumber);
+            console.log(result);
         } else if (selectedOperator === "multiply") {
-            console.log(multiply(firstNumber, secondNumber));
+            result = multiply(firstNumber, secondNumber);
+            console.log(result);
         } else if (selectedOperator === "divide") {
-            console.log(divide(firstNumber, secondNumber));
+            result = divide(firstNumber, secondNumber);
+            console.log(result);
         }
 
     }
+    firstNumber = result;
+    secondNumber = '';
+    console.log('first number(new): ', firstNumber);
 });
 
