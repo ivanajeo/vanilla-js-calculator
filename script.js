@@ -30,6 +30,7 @@ const operatorBtn = document.querySelectorAll(".operatorBtn");
 let firstNumber = "";
 let secondNumber = "";
 let selectedOperator = null;
+bottomDis.textContent = "";
 
 const add = function(num1, num2) {
     return num1 + num2;
@@ -55,20 +56,22 @@ const percent = function(num1) {
     return num1 / 100;
 }
 
+function updateDisplay(content) {
+    bottomDis.textContent += content;
+}
+
 numberBtn.forEach((button) => {
     button.addEventListener("click", function () {
-        // if (firstNumber === null) {
-        //     firstNumber = parseInt(this.getAttribute('data-num'));
-        //     console.log('First Number:', firstNumber);
-        // } else if (selectedOperator !== null) {
-        //     secondNumber = parseInt(this.textContent);
-        //     console.log('Second Number:', secondNumber);
-        // }
+        const digit = this.getAttribute("data-num");
         if (selectedOperator === null) {
-            firstNumber += this.getAttribute("data-num");
+            firstNumber += digit
+            updateDisplay(digit);
             console.log('First Number:', firstNumber);
+            console.log('digit', digit);
+
         } else {
-            secondNumber += this.getAttribute("data-num");
+            secondNumber += digit;
+            updateDisplay(digit);
             console.log('Second Number:', secondNumber);
         }
     });
@@ -77,6 +80,7 @@ numberBtn.forEach((button) => {
 operatorBtn.forEach((button) => {
     button.addEventListener("click", function() {
         selectedOperator = this.getAttribute('data-operator');
+        updateDisplay(` ${button.textContent} `);
         console.log('Selected Operator:', selectedOperator);
 });
 })
@@ -100,6 +104,7 @@ equalBtn.addEventListener("click", function() {
         }
 
     }
+    updateDisplay(` = ${result}`);
     firstNumber = result;
     secondNumber = '';
     console.log('first number(new): ', firstNumber);
