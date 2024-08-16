@@ -32,29 +32,15 @@ let secondNumber = "";
 let selectedOperator = null;
 bottomDis.textContent = "";
 
-const add = function(num1, num2) {
-    return num1 + num2;
-}
+const operations = {
+    add: (num1, num2) => num1 + num2,
+    subtract: (num1, num2) => num1 - num2,
+    multiply: (num1, num2) => num1 * num2,
+    divide: (num1, num2) => num2 !== 0 ? num1 / num2 : 'Error' ,
+    root: (num1) => Math.sqrt(num1),
+    percent: (num1) => num1 / 100
+};
 
-const subtract = function(num1, num2) {
-    return num1 - num2;
-}
-
-const multiply = function(num1, num2) {
-    return num1 * num2;
-}
-
-const divide = function(num1, num2) {
-    return num1 / num2;
-}
-
-const root = function(num1) {
-    return Math.sqrt(num1);
-}
-
-const percent = function(num1) {
-    return num1 / 100;
-}
 
 function updateDisplay(content) {
     bottomDis.textContent += content;
@@ -88,25 +74,15 @@ operatorBtn.forEach((button) => {
 
 equalBtn.addEventListener("click", function() {
     let result;
-    if (firstNumber !== null && secondNumber !== null) {
-        if (selectedOperator === "add") {
-            result = add(parseInt(firstNumber), parseInt(secondNumber));
-            console.log(result);
-        } else if (selectedOperator === "subtract") {
-            result = subtract(firstNumber, secondNumber);
-            console.log(result);
-        } else if (selectedOperator === "multiply") {
-            result = multiply(firstNumber, secondNumber);
-            console.log(result);
-        } else if (selectedOperator === "divide") {
-            result = divide(firstNumber, secondNumber);
-            console.log(result);
-        }
-
+    if (firstNumber !== "" && secondNumber !== "") {
+        result = operations[selectedOperator](parseFloat(firstNumber), parseFloat(secondNumber));
+        updateDisplay(` = ${result}`);
+        firstNumber = result;
+        secondNumber = '';
+        selectedOperator = null;
     }
-    updateDisplay(` = ${result}`);
-    firstNumber = result;
-    secondNumber = '';
+    
+    
     console.log('first number(new): ', firstNumber);
 });
 
