@@ -25,14 +25,9 @@ function doOperation(firstNum, secondNum, selectedOperation) {
     firstNumber = result;
     selectedOperator = null;
     secondNumber = "";   
-    console.log("firstNumber(new) ", firstNumber);
-    console.log("secondNumber(prenew): ", secondNumber);
-    console.log("selectedOperator(new) ", selectedOperator);
-    console.log("result(new) ", result);
-    
-
     return result;
 }
+
 function updateDisplay(content) {
     bottomDis.textContent += content;
 }
@@ -52,14 +47,11 @@ numberBtns.forEach(function(numberBtn) {
             if (selectedOperator === null) {
                 firstNumber += digit;
                 updateDisplay(digit);
-                console.log("digit: ", digit);
-                console.log("firstNumber: ", firstNumber);
             } else {
                 secondNumber += digit;
                 updateDisplay(digit);
-                console.log("digit: ", digit);
-                console.log("secondNumber: ", secondNumber);
             }
+
         } else {
             if (selectedOperator === null) {
                 resetDisplay();
@@ -67,18 +59,10 @@ numberBtns.forEach(function(numberBtn) {
                 firstNumber += digit;
                 updateDisplay(digit);          
 
-                              
-                console.log("digit(new): ", digit);
-                console.log("firstNumber(new): ", firstNumber);
-                
-
             } else {
                 secondNumber += digit;
                 updateDisplay(digit);
-                console.log("digit: ", digit);
-                console.log("secondNumber(new): ", secondNumber);
                 result = null;
-                console.log(result);
             }
 
         }
@@ -88,14 +72,11 @@ numberBtns.forEach(function(numberBtn) {
 
 operatorBtns.forEach(function(operatorBtn) {
     operatorBtn.addEventListener("click", function() {
+        
+        
         if (selectedOperator !== null && result === null 
             && firstNumber !== "" && secondNumber !== "") {
-            
-
-            console.log("1", selectedOperator);
-
             doOperation(firstNumber, secondNumber, selectedOperator);
-            console.log("2", selectedOperator);
 
             resetDisplay();
             updateDisplay(firstNumber)
@@ -103,17 +84,13 @@ operatorBtns.forEach(function(operatorBtn) {
             selectedOperator = this.getAttribute("data-operator");
             updateDisplay(` ${operatorBtn.textContent} `);
 
-
-            console.log("3", selectedOperator);
         } else if (firstNumber !== "") {
             resetDisplay();
             updateDisplay(firstNumber);
 
             selectedOperator = this.getAttribute("data-operator");
             updateDisplay(` ${operatorBtn.textContent} `);
-            
-           
-            console.log("selectedOperator ", selectedOperator);
+
         }
     })
 })
@@ -121,11 +98,4 @@ operatorBtns.forEach(function(operatorBtn) {
 equalBtn.addEventListener("click", function() {
     doOperation(firstNumber, secondNumber, selectedOperator);
     updateDisplay(` = ${result}`);
-
-    // firstNumber = result;
-    // result = null;
-    // selectedOperator = null;
-    // console.log("firstNumber(new) ", firstNumber);
-    // console.log("result(new) ", result);
-    // console.log("selectedOperator(new) ", selectedOperator);
 })
