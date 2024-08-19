@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
     <title>Calculator | Odin Project Challenge</title>
@@ -15,33 +20,35 @@
                 <div class="display historyDis">upper</div>
                 <div class="display outputDis">bottom</div>
 
-                <div class="btn clearBtn">CLEAR</div>
-                <div class="btn deleteBtn">DELETE</div> 
+                <div class="btn greenBtn clearBtn">C</div>
+                <div class="btn redBtn deleteBtn">DEL</div> 
 
-                <div class="btn numberBtn nineBtn" data-num="9">9</div>
-                <div class="btn numberBtn eightBtn" data-num="8">8</div>
-                <div class="btn numberBtn sevenBtn" data-num="7">7</div>
-                <div class="btn numberBtn sixBtn" data-num="6">6</div>
-                <div class="btn numberBtn fiveBtn" data-num="5">5</div>
-                <div class="btn numberBtn fourBtn" data-num="4">4</div>
-                <div class="btn numberBtn threeBtn" data-num="3">3</div>
-                <div class="btn numberBtn twoBtn" data-num="2">2</div>
-                <div class="btn numberBtn oneBtn" data-num="1">1</div>
-                <div class="btn numberBtn zeroBtn" data-num="0">0</div>
+                <div class="btn whiteBtn numberBtn nineBtn" data-num="9">9</div>
+                <div class="btn whiteBtn numberBtn eightBtn" data-num="8">8</div>
+                <div class="btn whiteBtn numberBtn sevenBtn" data-num="7">7</div>
+                <div class="btn whiteBtn numberBtn sixBtn" data-num="6">6</div>
+                <div class="btn whiteBtn numberBtn fiveBtn" data-num="5">5</div>
+                <div class="btn whiteBtn numberBtn fourBtn" data-num="4">4</div>
+                <div class="btn whiteBtn numberBtn threeBtn" data-num="3">3</div>
+                <div class="btn whiteBtn numberBtn twoBtn" data-num="2">2</div>
+                <div class="btn whiteBtn numberBtn oneBtn" data-num="1">1</div>
+                <div class="btn whiteBtn numberBtn zeroBtn" data-num="0">0</div>
 
-                <div class="btn plusMinusBtn">±</div>
-                <div class="btn dotBtn">.</div>
+                <div class="btn whiteBtn dotBtn">.</div>
+                <div class="btn orangeBtn plusMinusBtn">±</div>
     
-                <div class="btn operatorBtn divisionBtn" data-operator="divide">÷</div>
-                <div class="btn operatorBtn multiplicationBtn" data-operator="multiply">×</div>
-                <div class="btn operatorBtn subtractionBtn" data-operator="subtract">−</div>
-                <div class="btn operatorBtn additionBtn" data-operator="add">+</div>
+                <div class="btn orangeBtn operatorBtn divisionBtn" data-operator="divide">÷</div>
+                <div class="btn orangeBtn operatorBtn multiplicationBtn" data-operator="multiply">×</div>
+                <div class="btn orangeBtn operatorBtn subtractionBtn" data-operator="subtract">−</div>
+                <div class="btn orangeBtn operatorBtn additionBtn" data-operator="add">+</div>
 
-                <div class="btn equalBtn">=</div>  
-                </div>
+                <div class="btn orangeBtn equalBtn">=</div>  
+                
             </div>
         </main>
-        <footer class="footer"></footer>
+        <footer class="footer">
+            Calculator Odin Project Challenge by <a href="https://github.com/ivanajeo/calculator-odin-project" class="githubLink" target="_blank" rel="noopener noreferrer">ivanajeo</a>  &#169 2024
+        </footer>
     </div>
 </body>
 </html>
