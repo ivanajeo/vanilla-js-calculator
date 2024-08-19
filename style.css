@@ -26,28 +26,18 @@
     isolation: isolate;
   }
 
+
+/* GLOBAL STYLES */
 body {
     font-family: "Roboto", sans-serif;
     background-color: #fff; 
     color: black;
     font-size: 1.35rem;
-
 }
-.container {
 
-    min-height: 100vh;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}  
-
-.main {
-    margin: auto;
-}
+/* BUTTON STYLES */
 .btn {
-    
     border: 2px solid rgb(54, 54, 54);
     border-radius: 5px;
     margin: 0.25rem;
@@ -67,9 +57,11 @@ body {
 }
 
 .btn:active {
-    filter: brightness(0.8);
+    filter: brightness(0.75);
 }
 
+
+/* Specific Button Colors */
 .greenBtn {
     background-color: green;
     color: #fff;
@@ -88,6 +80,21 @@ body {
 
 .whiteBtn {
     background-color: #fff;
+}
+
+
+/* LAYOUT STYLES */
+.container {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}  
+
+.main {
+    margin: auto;
 }
 
 .frame {
@@ -114,6 +121,8 @@ body {
         "zero       zero        dot         equal";
 }
 
+
+/* DISPLAY STYLES */
 .display {
     background-color: white;
     border: 2px solid black;
@@ -146,91 +155,31 @@ body {
     border-top: none;
 }
 
-.clearBtn {
-    grid-area: clear;
-}
 
-.deleteBtn {
-    grid-area: delete;
-}
+/* CALCULATOR BUTTON GRID */
+/* Calculator Button Grid Areas */
+.clearBtn {grid-area: clear;}
+.deleteBtn {grid-area: delete;}
+.nineBtn {grid-area: nine;}
+.eightBtn {grid-area: eight;}
+.sevenBtn {grid-area: seven;}
+.sixBtn {grid-area: six;}
+.fiveBtn {grid-area: five;}
+.fourBtn {grid-area: four;}
+.threeBtn {grid-area: three;}
+.twoBtn {grid-area: two;}
+.oneBtn {grid-area: one;}
+.plusMinusBtn {grid-area: plusMinus;}
+.zeroBtn {grid-area: zero;}
+.dotBtn {grid-area: dot;}
+.divisionBtn {grid-area: division;}
+.multiplicationBtn {grid-area: multiplication;}
+.equalBtn {grid-area: equal;}
+.subtractionBtn {grid-area:subtraction;}
+.additionBtn {grid-area: addition;}
 
-.nineBtn {
-    grid-area: nine;
-}
 
-.eightBtn {
-    grid-area: eight;
-}
-
-.sevenBtn {
-    grid-area: seven;
-}
-
-.sixBtn {
-    grid-area: six;
-}
-
-.fiveBtn {
-    grid-area: five;
-}
-
-.fourBtn {
-    grid-area: four;
-}
-
-.threeBtn {
-    grid-area: three;
-}
-
-.twoBtn {
-    grid-area: two;
-}
-
-.oneBtn {
-    grid-area: one;
-}
-
-.plusMinusBtn {
-    grid-area: plusMinus;
-}
-
-.zeroBtn {
-    grid-area: zero;
-}
-
-.dotBtn {
-    grid-area: dot;
-}
-
-.rootBtn {
-    grid-area: root;
-}
-
-.divisionBtn {
-    grid-area: division;
-}
-
-.percentBtn {
-    grid-area: percent;
-}
-
-.multiplicationBtn {
-    grid-area: multiplication;
-}
-
-.equalBtn {
-    grid-area: equal;
-
-}
-
-.subtractionBtn {
-    grid-area:subtraction;
-}
-
-.additionBtn {
-    grid-area: addition;
-}
-
+/* FOOTER STYLES */
 .footer {
     width: 100%;
     background-color: rgb(16, 80, 255);
@@ -259,6 +208,8 @@ a:active {
     color: rgb(0, 203, 225);
 }
 
+
+/* MEDIA QUERY */
 @media (max-width: 600px) {
     .footer {
         font-size: 1.25rem;
