@@ -42,18 +42,18 @@
     min-height: 500px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(7, 1fr);
 
     padding: 1rem;
     grid-template-areas: 
-        "upperDis  upperDis   upperDis   upperDis   upperDis"
-        "bottomDis bottomDis  bottomDis  bottomDis  bottomDis"
-        "clear      clear       .           delete      delete"
-        "seven      eight       nine        root        division"
-        "four       five        six         percent     multiplication"
-        "one        two         three       equal       subtraction"
-        "plusMinus  zero        dot         equal       addition";
+        "upperDis  upperDis   upperDis   upperDis"
+        "bottomDis bottomDis  bottomDis  bottomDis"
+        "clear      delete      plusMinus   division"
+        "seven      eight       nine        multiplication"
+        "four       five        six         subtraction"
+        "one        two         three       addition"
+        "zero       zero        dot         equal";
 
 }
 
