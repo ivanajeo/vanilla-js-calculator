@@ -15,9 +15,7 @@ const operations = {
     add: (num1, num2) => num1 + num2,
     subtract: (num1, num2) => num1 - num2,
     multiply: (num1, num2) => num1 * num2,
-    divide: (num1, num2) => num2 !== 0 ? num1 / num2 : 'Error' ,
-    root: (num1) => Math.sqrt(num1),
-    percent: (num1) => num1 / 100
+    divide: (num1, num2) => num2 !== 0 ? num1 / num2 : 'Error'
 };
 
 function doOperation(firstNum, secondNum, selectedOperation) {
@@ -72,9 +70,7 @@ numberBtns.forEach(function(numberBtn) {
 
 operatorBtns.forEach(function(operatorBtn) {
     operatorBtn.addEventListener("click", function() {
-        
-        
-        if (selectedOperator !== null && result === null 
+         if (selectedOperator !== null && result === null 
             && firstNumber !== "" && secondNumber !== "") {
             doOperation(firstNumber, secondNumber, selectedOperator);
 
