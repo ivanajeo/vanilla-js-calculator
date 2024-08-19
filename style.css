@@ -47,8 +47,8 @@
 
     padding: 1rem;
     grid-template-areas: 
-        "upperDis  upperDis   upperDis   upperDis"
-        "bottomDis bottomDis  bottomDis  bottomDis"
+        "historyDis  historyDis   historyDis   historyDis"
+        "outputDis outputDis  outputDis  outputDis"
         "clear      delete      plusMinus   division"
         "seven      eight       nine        multiplication"
         "four       five        six         subtraction"
@@ -63,15 +63,15 @@
     margin: 0.15rem;
 }
 
-.upperDis {
-    grid-area: upperDis;
+.historyDis {
+    grid-area: historyDis;
     margin-bottom: 0;
     border-bottom: none;
    
 }
 
-.bottomDis {
-    grid-area: bottomDis;
+.outputDis {
+    grid-area: outputDis;
     margin-top: 0;
     margin-bottom: 0.5rem;
     border-top: none;
