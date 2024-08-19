@@ -1,3 +1,5 @@
+// **DOM Elements Selection**
+// Select elements from the DOM for display and button functionalities
 const historyDis = document.querySelector(".historyDis");
 const outputDis = document.querySelector(".outputDis");
 
@@ -11,6 +13,9 @@ const equalBtn = document.querySelector(".equalBtn");
 const numberBtns = document.querySelectorAll(".numberBtn");
 const operatorBtns = document.querySelectorAll(".operatorBtn");
 
+
+// **Initial Setup**
+// Initialize Display and calculation variables
 historyDis.textContent = "";
 outputDis.textContent = "0";
 let firstNumber = "";
@@ -21,6 +26,8 @@ let result = null;
 const MAX_LENGTH = 16;
 
 
+// **Operations Object**
+// Define basic arithmetic operations
 const operations = {
     add: (num1, num2) => num1 + num2,
     subtract: (num1, num2) => num1 - num2,
@@ -28,18 +35,20 @@ const operations = {
     divide: (num1, num2) =>  num1 / num2
 };
 
-
+// **Utility Functions**
+// Round a number to a specific number of decimal places
 function roundToDecimalPlaces(num, places) {
     const factor = Math.pow(10, places);
     return Math.round(num * factor) / factor;
 }
 
-
+// Delete last digit of a number
 function deleteDigit(num) {
     num = num.toString();
     return num.slice(0, -1) || "";
 }
 
+// Calculate the result of an operation between two numbers
 function calculateResult(firstNum, secondNum, selectedOperation) {
     if (selectedOperation === "divide" && parseFloat(secondNum) === 0) {
         result = "Can't divide by zero";
@@ -54,7 +63,8 @@ function calculateResult(firstNum, secondNum, selectedOperation) {
     return result;
 }
 
-
+// **Main Operation Function**
+// Perform the calculation based on the selected operator
 function doOperation() {
     if (firstNumber && secondNumber && selectedOperator) {
         firstNumber = calculateResult(firstNumber, secondNumber, selectedOperator)
@@ -68,34 +78,32 @@ function doOperation() {
     }
     }
     
-
+// Reset variables after an operation
 function resetCalculation() {
     result = null;
     selectedOperator = null;
     secondNumber = "";   
 }
 
-
+// **Display Update Functions**
 function updateHistoryDisplay(content) {
     historyDis.textContent += content;
 }
-
 
 function updateOutputDisplay(content) {
     outputDis.textContent += content;
 }
 
-
 function resetOutputDisplay() {
     outputDis.textContent = "";
 }
-
 
 function resetHistoryDisplay() {
     historyDis.textContent = "";
 }
 
 
+// **Event Handlers**
 function handleNumberClick() {
     const digit = this.getAttribute("data-num");
     if (firstNumber === "Can't divide by zero") {
@@ -131,7 +139,7 @@ function handleOperatorClick(event) {
     }
 }
 
-
+// Handle adding a decimal point
 function handleDotClick() {
     let number = selectedOperator ? secondNumber : firstNumber;
     if (!number.includes(".")) {
@@ -156,7 +164,7 @@ function handlePlusMinusClick() {
     }
 }
 
-
+// Handle removing the last digit
 function handleDeleteClick() {
     let number = selectedOperator ? secondNumber : firstNumber;
     number = deleteDigit(number);
@@ -166,7 +174,7 @@ function handleDeleteClick() {
     else secondNumber = number;
 }
 
-
+// Handle reseting all variables and displays
 function handleClearClick() {
     firstNumber = "";
     secondNumber = "";
@@ -177,6 +185,9 @@ function handleClearClick() {
     outputDis.textContent = "0";
 }
 
+
+// **Event Listeners**
+// Attach event listeners to number, operator, and function buttons
 numberBtns.forEach(numberBtn => {
     numberBtn.addEventListener("click", handleNumberClick);});
 
