@@ -23,6 +23,7 @@ let secondNumber = "";
 let selectedOperator = null;
 let result = null;
 
+
 const MAX_LENGTH = 16;
 
 
@@ -67,7 +68,7 @@ function calculateResult(firstNum, secondNum, selectedOperation) {
 // Perform the calculation based on the selected operator
 function doOperation() {
     if (firstNumber && secondNumber && selectedOperator) {
-        firstNumber = calculateResult(firstNumber, secondNumber, selectedOperator)
+        firstNumber = calculateResult(firstNumber, secondNumber, selectedOperator);
 
         updateHistoryDisplay(`${secondNumber} =`);
        
@@ -106,13 +107,14 @@ function resetHistoryDisplay() {
 // **Event Handlers**
 function handleNumberClick() {
     const digit = this.getAttribute("data-num");
+
+    if (outputDis.textContent === "0")  resetOutputDisplay();
+
     if (firstNumber === "Can't divide by zero") {
         handleClearClick();  // Clear all the displays and reset the variables
     }
-    if (outputDis.textContent === "0")  resetOutputDisplay();
-
+    
     let number = selectedOperator ? secondNumber : firstNumber;
-
     if (number.length >= MAX_LENGTH) return;
     number += digit;
     updateOutputDisplay(digit)
