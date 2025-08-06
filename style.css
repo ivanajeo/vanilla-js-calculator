@@ -49,15 +49,7 @@ body {
     justify-content: center;
     align-items: center;
     user-select: none;
-    transition: background-color 0.2s ease, color 0.2s ease, filter 0.2s ease;
-}
-
-.btn:hover {
-    filter: brightness(0.9);
-}
-
-.btn:active {
-    filter: brightness(0.75);
+    transition: background-color 0.1s ease, color 0.1s ease, filter 0.2s ease;
 }
 
 
@@ -69,19 +61,44 @@ body {
     font-size: 1.65rem;
 }
 
+.greenBtn:hover {
+    background-color:  rgb(0, 109, 0);
+}
+
 .redBtn {
     background-color: rgb(255, 0, 0);
     color: #fff;
 }
 
+.redBtn:hover {
+    background-color:  rgb(228, 0, 0);
+}
+
+
 .orangeBtn {
     background-color: orange;
 }
+
+.orangeBtn:hover {
+    background-color:  rgb(255, 136, 0);
+}
+
+
 
 .whiteBtn {
     background-color: #fff;
 }
 
+.whiteBtn:hover {
+    background-color:  rgb(230, 230, 230);
+}
+
+.greenBtn:active,
+.redBtn:active,
+.orangeBtn:active,
+.whiteBtn:active {
+    filter: brightness(0.75);
+}
 
 /* LAYOUT STYLES */
 .container {
@@ -182,13 +199,14 @@ body {
 /* FOOTER STYLES */
 .footer {
     width: 100%;
-    background-color: rgb(16, 80, 255);
+    background-color: rgb(0, 60, 226);
+    font-size: 1rem;
     color: #fff4f4;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 0.7em;
+    padding: 0.5em;
 }
 
 a {
@@ -212,7 +230,8 @@ a:active {
 /* MEDIA QUERY */
 @media (max-width: 600px) {
     .footer {
-        font-size: 1.25rem;
+        font-size: 0.85rem;
         flex-direction: column;
+        padding: 0.35em;
     }
 }
